@@ -2,7 +2,10 @@ import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-function App() {
+import "./components/ToDoList.tsx";
+import { ToDoList } from "./components/ToDoList";
+
+const App: React.FC = () => {
   return (
     <div>
       <h1 className="h1 textAlignCenter">ToDo List</h1>
@@ -12,9 +15,10 @@ function App() {
           <input type="text" className="form-control" />
           <button className="btn btn-primary inlineButton ml-2">ADD</button>
         </div>
+        <ToDoList />
       </div>
     </div>
   );
-}
+};
 
 export default App;
