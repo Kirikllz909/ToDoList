@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
+import { v4 as uuid } from "uuid";
+
 import "./components/ToDoList.tsx";
 import { ToDoList } from "./components/ToDoList";
 import { ToDoForm } from "./components/ToDoForm";
 
-interface IToDoElement {
+export interface IToDoElement {
+  completed: boolean;
   id: string;
-  text: string;
+  toDoText: string;
   date: Date;
+  deadlineDate?: Date; //TODO: adding search by deadline date
   keywords?: string; //TODO:  adding search by keywords
 }
 
@@ -17,7 +21,15 @@ const App: React.FC = () => {
   const [ToDos, setToDos] = useState<Array<IToDoElement>>([]);
 
   function setNewToDo(text: string): void {
-    console.log(text);
+    let currentToDoList: Array<IToDoElement> = ToDos;
+
+    currentToDoList.push({
+      completed: false,
+      id: uuid(),
+      toDoText: text,
+      date: new Date(),
+    });
+    setToDos(currentToDoList);
   }
 
   return (
@@ -26,7 +38,7 @@ const App: React.FC = () => {
       <div className="divBorder">
         <h5 className="h5 ml-2 mt-2">Enter the action to add to the list:</h5>
         <ToDoForm onSubmit={setNewToDo} />
-        <ToDoList />
+        <ToDoList currentToDoList={ToDos} />
       </div>
     </div>
   );
