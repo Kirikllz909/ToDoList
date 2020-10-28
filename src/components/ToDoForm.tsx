@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-export const ToDoForm: React.FC<any> = (props) => {
+interface IProps {
+  onSubmit: (text: string) => void;
+}
+
+export const ToDoForm: React.FC<IProps> = (props) => {
   const [textValue, setTextValue] = useState("");
   let inputRef: React.RefObject<HTMLInputElement>;
   inputRef = React.createRef();
