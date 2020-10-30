@@ -29,7 +29,7 @@ const App: React.FC = () => {
       toDoText: text,
       date: new Date(),
     });
-    setToDos(currentToDoList);
+    setToDos([...currentToDoList]);
   }
 
   return (
