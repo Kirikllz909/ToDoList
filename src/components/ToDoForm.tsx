@@ -5,7 +5,7 @@ interface IProps {
 }
 
 export const ToDoForm: React.FC<IProps> = (props) => {
-  const [textValue, setTextValue] = useState("");
+  const [textValue, setTextValue] = useState<string>("");
   let inputRef: React.RefObject<HTMLInputElement>;
   inputRef = React.createRef();
 

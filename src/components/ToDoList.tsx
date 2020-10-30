@@ -1,5 +1,22 @@
 import React from "react";
+import { IToDoElement } from "../App";
 
-export const ToDoList: React.FC = () => {
-  return <div>Hello World!</div>;
+import "../App.css";
+
+interface IProps {
+  currentToDoList: Array<IToDoElement>;
+}
+
+export const ToDoList: React.FC<IProps> = (props) => {
+  return (
+    <div>
+      {props.currentToDoList.map((value) => {
+        return (
+          <div key={value.id} className="parentFlex">
+            <button className="btn-dark">{value.toDoText}</button>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
