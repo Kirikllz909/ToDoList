@@ -5,6 +5,7 @@ import "./styles/ToDoListView.css";
 
 interface IProps {
   toDoElement: IToDoElement;
+  handleClick: (id: string) => void;
 }
 
 export const ToDoElement: React.FC<IProps> = (props) => {
@@ -31,7 +32,12 @@ export const ToDoElement: React.FC<IProps> = (props) => {
         </div>
         <div>
           <button className="btn btn-info">E</button>
-          <button className="btn btn-danger ml-3 mr-3">X</button>
+          <button
+            className="btn btn-danger ml-3 mr-3"
+            onClick={() => props.handleClick(props.toDoElement.id)}
+          >
+            X
+          </button>
         </div>
       </div>
     </div>
