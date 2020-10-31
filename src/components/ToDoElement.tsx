@@ -25,7 +25,7 @@ export const ToDoElement: React.FC<IProps> = (props) => {
             Created date:{" "}
             {props.toDoElement.date.getDate() +
               "/" +
-              (props.toDoElement.date.getUTCMonth() + 1)}
+              (props.toDoElement.date.getMonth() + 1)}
           </label>
           {/* For future development */}
           <label>Deadline date:</label>
