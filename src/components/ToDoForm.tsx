@@ -12,10 +12,21 @@ export const ToDoForm: React.FC<IProps> = (props) => {
   //When "Enter" key is pressed in input element you add this action to todo list
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      props.onSubmit(textValue);
-      inputRef.current!.value = "";
+      if (textValue.length > 0) {
+        props.onSubmit(textValue);
+        if (inputRef.current) inputRef.current.value = "";
+        setTextValue("");
+      } else alert("Wrong action string");
     }
   };
+
+  function submitChanges(): void {
+    if (textValue.length > 0) {
+      props.onSubmit(textValue);
+      if (inputRef.current) inputRef.current.value = "";
+      setTextValue("");
+    } else alert("Wrong action string");
+  }
 
   //Handle change of input element
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,8 +46,7 @@ export const ToDoForm: React.FC<IProps> = (props) => {
       <button
         type="button"
         onClick={() => {
-          props.onSubmit(textValue);
-          inputRef.current!.value = "";
+          submitChanges();
         }}
         className="btn btn-primary inlineButton ml-2"
       >
