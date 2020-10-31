@@ -44,7 +44,7 @@ export const ToDoListView: React.FC = () => {
     <div>
       <ToDoForm onSubmit={setNewToDo} />
       {ToDos.map((value) => {
-        return <ToDoElement toDoElement={value} />;
+        return <ToDoElement toDoElement={value} handleClick={removeElement} />;
       })}
     </div>
   );
