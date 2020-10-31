@@ -11,7 +11,7 @@ interface IProps {
 export const ToDoElement: React.FC<IProps> = (props) => {
   return (
     <div>
-      <div key={props.toDoElement.id} className="parentFlex">
+      <div className="parentFlex">
         <input
           type="checkbox"
           className="mr-4"
