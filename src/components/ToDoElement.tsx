@@ -16,9 +16,19 @@ export const ToDoElement: React.FC<IProps> = (props) => {
           className="mr-4"
           checked={props.toDoElement.completed}
         ></input>
-        <label className="border textPadding leftSide limitWidth">
+        <label className="border textPadding leftSide width75">
           {props.toDoElement.toDoText}
         </label>
+        <div className="flexColumn textPadding border mr-3 ml-3">
+          <label>
+            Created date:{" "}
+            {props.toDoElement.date.getDate() +
+              "/" +
+              (props.toDoElement.date.getUTCMonth() + 1)}
+          </label>
+          {/* For future development */}
+          <label>Deadline date:</label>
+        </div>
         <div>
           <button className="btn btn-info">E</button>
           <button className="btn btn-danger ml-3 mr-3">X</button>
