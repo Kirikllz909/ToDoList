@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { ToDoForm } from "./ToDoForm";
+import { ToDoElement } from "./ToDoElement";
 
-import "../App.css";
+import "./styles/ToDoListView.css";
 
 import { v4 as uuid } from "uuid";
 
@@ -16,6 +17,17 @@ export interface IToDoElement {
 
 export const ToDoListView: React.FC = () => {
   const [ToDos, setToDos] = useState<Array<IToDoElement>>([]);
+  let isEditing: number = 0; // variable for checking editing mode
+
+  //Function gets id and create new array without it
+  function removeElement(id: string): void {
+    let newArray: Array<IToDoElement> = ToDos.filter((value) => {
+      return value.id !== id;
+    });
+    setToDos([...newArray]);
+  }
+
+  function editElement() {}
 
   function setNewToDo(text: string): void {
     let currentToDoList: Array<IToDoElement> = ToDos;
@@ -32,11 +44,7 @@ export const ToDoListView: React.FC = () => {
     <div>
       <ToDoForm onSubmit={setNewToDo} />
       {ToDos.map((value) => {
-        return (
-          <div key={value.id} className="parentFlex">
-            <button className="btn-dark">{value.toDoText}</button>
-          </div>
-        );
+        return <ToDoElement toDoElement={value} />;
       })}
     </div>
   );
