@@ -11,7 +11,7 @@ interface IProps {
 export const ToDoElement: React.FC<IProps> = (props) => {
   return (
     <div>
-      <div key={props.toDoElement.id} className="parentFlex">
+      <div className="parentFlex">
         <input
           type="checkbox"
           className="mr-4"
@@ -25,7 +25,7 @@ export const ToDoElement: React.FC<IProps> = (props) => {
             Created date:{" "}
             {props.toDoElement.date.getDate() +
               "/" +
-              (props.toDoElement.date.getUTCMonth() + 1)}
+              (props.toDoElement.date.getMonth() + 1)}
           </label>
           {/* For future development */}
           <label>Deadline date:</label>

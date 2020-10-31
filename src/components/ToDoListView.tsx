@@ -17,7 +17,7 @@ export interface IToDoElement {
 
 export const ToDoListView: React.FC = () => {
   const [ToDos, setToDos] = useState<Array<IToDoElement>>([]);
-  let isEditing: number = 0; // variable for checking editing mode
+  const isEditing: number = 0;
 
   //Function gets id and create new array without it
   function removeElement(id: string): void {
@@ -27,7 +27,13 @@ export const ToDoListView: React.FC = () => {
     setToDos([...newArray]);
   }
 
-  function editElement() {}
+  function editElement(id: string, newText: string) {
+    let newArray: Array<IToDoElement> = ToDos;
+    newArray.find((value) => {
+      return value.id === id ? (value.toDoText = newText) : value;
+    });
+    setToDos([...newArray]);
+  }
 
   function setNewToDo(text: string): void {
     let currentToDoList: Array<IToDoElement> = ToDos;
@@ -44,7 +50,13 @@ export const ToDoListView: React.FC = () => {
     <div>
       <ToDoForm onSubmit={setNewToDo} />
       {ToDos.map((value) => {
-        return <ToDoElement toDoElement={value} handleClick={removeElement} />;
+        return (
+          <ToDoElement
+            key={value.id}
+            toDoElement={value}
+            handleClick={removeElement}
+          />
+        );
       })}
     </div>
   );
