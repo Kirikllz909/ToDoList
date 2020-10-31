@@ -12,10 +12,18 @@
     align-items: center;
 }
 
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
 .textPadding {
     word-break: break-all;
     padding: 0.5vh;
-    width: 90%;
+}
+
+.width75 {
+    width: 75%;
 }
 
 .leftSide {
