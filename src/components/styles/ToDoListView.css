@@ -1,0 +1,27 @@
+.border {
+    border-radius: 5px;
+    border-width: 2px;
+    border-collapse: collapse;
+    border-style: solid;
+}
+
+
+.parentFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textPadding {
+    word-break: break-all;
+    padding: 0.5vh;
+    width: 90%;
+}
+
+.leftSide {
+    margin-right: auto;
+}
+
+.rightSide {
+    margin-right: auto;
+}
