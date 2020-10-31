@@ -1,0 +1,35 @@
+.border {
+    border-radius: 5px;
+    border-width: 2px;
+    border-collapse: collapse;
+    border-style: solid;
+}
+
+
+.parentFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.textPadding {
+    word-break: break-all;
+    padding: 0.5vh;
+}
+
+.width75 {
+    width: 75%;
+}
+
+.leftSide {
+    margin-right: auto;
+}
+
+.rightSide {
+    margin-right: auto;
+}
