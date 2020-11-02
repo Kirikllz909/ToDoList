@@ -17,12 +17,22 @@ export interface IToDoElement {
 
 export const ToDoListView: React.FC = () => {
   const [ToDos, setToDos] = useState<Array<IToDoElement>>([]);
-  const isEditing: number = 0;
 
   //Function gets id and create new array without it
   function removeElement(id: string): void {
     let newArray: Array<IToDoElement> = ToDos.filter((value) => {
       return value.id !== id;
+    });
+    setToDos([...newArray]);
+  }
+
+  function changeComplete(id: string): void {
+    let newArray: Array<IToDoElement> = ToDos;
+    newArray.forEach((value) => {
+      if (value.id === id)
+        value.completed === false
+          ? (value.completed = true)
+          : (value.completed = false);
     });
     setToDos([...newArray]);
   }
@@ -55,6 +65,7 @@ export const ToDoListView: React.FC = () => {
             key={value.id}
             toDoElement={value}
             handleClick={removeElement}
+            onChangeStatus={changeComplete}
           />
         );
       })}
