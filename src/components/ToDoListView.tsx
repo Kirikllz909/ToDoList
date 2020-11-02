@@ -37,10 +37,11 @@ export const ToDoListView: React.FC = () => {
     setToDos([...newArray]);
   }
 
-  function editElement(id: string, newText: string) {
+  function handleEdit(id: string, newText: string) {
     let newArray: Array<IToDoElement> = ToDos;
-    newArray.find((value) => {
-      return value.id === id ? (value.toDoText = newText) : value;
+    newArray.forEach((value) => {
+      if (value.id === id)
+        if (value.toDoText !== newText) value.toDoText = newText;
     });
     setToDos([...newArray]);
   }
@@ -66,6 +67,7 @@ export const ToDoListView: React.FC = () => {
             toDoElement={value}
             handleClick={removeElement}
             onChangeStatus={changeComplete}
+            handleEdit={handleEdit}
           />
         );
       })}
