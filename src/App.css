@@ -16,3 +16,8 @@
     flex-direction: row;
     margin: 10px;
 }
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
