@@ -15,11 +15,6 @@ The point of this project was to learn typescript with react.
 * Changing the completion state
 * Cancel changes when dates and text are incorrect
 
-## In the plans
-1. Add search function
-2. Save elements to json file
-3. Load elements from json file
-
 ### Start project
 
 To run app you should go to the folder install packages and run command `npm start`
