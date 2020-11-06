@@ -25,7 +25,7 @@ The point of this project was to learn typescript with react.
 To run app you should go to the folder and run comman `npm start`
 
 Example:
-`
+```
   cd ./projects/todolist
   npm start
-`
+```
