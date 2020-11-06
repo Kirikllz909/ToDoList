@@ -22,10 +22,11 @@ The point of this project was to learn typescript with react.
 
 ### Start project
 
-To run app you should go to the folder and run command `npm start`
+To run app you should go to the folder install packages and run command `npm start`
 
 Example:
 ```
   cd ./projects/todolist
+  npm install
   npm start
 ```
