@@ -147,7 +147,7 @@ export const ToDoElement: React.FC<IProps> = (props) => {
           checked={props.toDoElement.completed}
           onChange={() => props.onChangeStatus(props.toDoElement.id)}
         />
-        {isEditing === false ? (
+        {!isEditing ? (
           <label className="border textPadding leftSide width75">
             {props.toDoElement.toDoText}
           </label>
@@ -161,7 +161,7 @@ export const ToDoElement: React.FC<IProps> = (props) => {
           />
         )}
         <div className="flexColumn textPadding border mr-3 ml-3">
-          {isEditing === false ? (
+          {!isEditing ? (
             <>
               <label>
                 Start date: <br />
@@ -200,7 +200,7 @@ export const ToDoElement: React.FC<IProps> = (props) => {
           )}
         </div>
         <div>
-          {isEditing === false ? (
+          {!isEditing ? (
             <button
               className="btn btn-info"
               onClick={() => {
