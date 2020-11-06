@@ -22,7 +22,7 @@ The point of this project was to learn typescript with react.
 
 ### Start project
 
-To run app you should go to the folder and run comman `npm start`
+To run app you should go to the folder and run command `npm start`
 
 Example:
 ```
