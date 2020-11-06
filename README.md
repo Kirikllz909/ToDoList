@@ -3,7 +3,7 @@
 The point of this project was to learn typescript with react.
 
 ## Bad features
-1. You can add elemnt without date but start and deadline dates will be created with the current date
+1. You can add element without date but start and deadline dates will be created with the current date
 
 ## Current features
 
