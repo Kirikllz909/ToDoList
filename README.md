@@ -2,9 +2,6 @@
 
 The point of this project was to learn typescript with react.
 
-## Bad features
-1. You can add element without date but start and deadline dates will be created with the current date
-
 ## Current features
 
 * Adding element to list
@@ -14,7 +11,7 @@ The point of this project was to learn typescript with react.
 * Cancel changes button
 * Changing the completion state
 * Cancel changes when dates and text are incorrect
-
+* Adding elements without any date will create element with today start and deadline dates
 ### Start project
 
 To run app you should go to the folder install packages and run command `npm start`
